@@ -56,7 +56,7 @@ const Dashboard: React.FC = () => {
       id: editingFood.id,
       available: editingFood.available,
     };
-    await api.patch(`foods/${editingFood.id}`, editedFood);
+    await api.put(`foods/${editingFood.id}`, editedFood);
 
     const updatedFoods = foods.map(compareFood =>
       compareFood.id === editedFood.id ? editedFood : compareFood,
